@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import CreatePosts from './CreatePosts';
 
 function Plants(props) {
 	const [plants, setPlants] = useState([]);
@@ -16,6 +17,7 @@ function Plants(props) {
 	}, []);
 	return (
 		<section className='container'>
+            <CreatePosts />
 			{plants.map((plant) => {
 				return (
 					<Link to={`${plant._id}`} key={plant._id}>
