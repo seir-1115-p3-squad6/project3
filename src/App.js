@@ -4,6 +4,7 @@ import Nav from './components/header/Nav';
 import About from './components/about/About';
 import Plants from './components/plants/Plants';
 import Footer from './components/footer/Footer';
+import PlantDetails from './components/plantDetails/PlantDetails';
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 			<Routes>
 				<Route path='/' element={<About />} />
 				<Route path='/plants' element={<Plants />} />
+				<Route path='/plants/:id' element={<PlantDetails />} />
 			</Routes>
 			<footer>
 				<Footer />
