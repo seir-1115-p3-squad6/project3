@@ -25,8 +25,19 @@ function PlantDetails(props) {
 	}
 	return (
 		<div className='plant-card'>
-			<img src={plant.image} alt={plant.name} />
 			<h1>{plant.name}</h1>
+			<h2> Scientific Name: {plant.scientific_name}</h2>
+			<img src={plant.image} alt={plant.name} />
+			<p>Descrition: {plant.description}</p>
+			<ul>
+				<li>Moisture: requires {plant.moisture} moisture</li>
+				<li>Light: requires {plant.light} light</li>
+			</ul>
+			<button>
+				<a className='plant-purchase' href={plant.purchase_link}>
+					Purchace Plant here
+				</a>
+			</button>
 		</div>
 	);
 }
