@@ -38,7 +38,19 @@ const PlantDetails = () => {
 		// return response.data;
 	};
 
-	if (!plant) {
+	const handleFavorite = async () => {
+		
+		await axios.put(url, { favorite: true });
+		console.log(plant.favorite);
+	};
+
+	const handleUnfavorite = async () => {
+		
+		await axios.put(url, { favorite: false });
+		 console.log(plant.favorite);
+	};
+
+	if (!plant || plant.favorite) {
 		return <h1>loading plants</h1>;
 	}
 	return (
@@ -61,6 +73,10 @@ const PlantDetails = () => {
 					</a>
 				</button>
 				<button onClick={handleDelete}>Kill This Plant</button>
+				<button onClick={handleFavorite}>Heart</button>
+				<button onClick={handleUnfavorite}>Anti-Heart</button>
+				
+				<p>Heart</p>
 			</div>
 		</div>
 	);
