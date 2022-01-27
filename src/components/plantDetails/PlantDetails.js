@@ -7,7 +7,7 @@ const PlantDetails = ({ match, history }) => {
 	const { id } = useParams();
 
 	const [plant, setPlant] = useState(null);
-	const url = `http://localhost:3000/plants/${id}`;
+	const url = `https://seir1115-plants-api.herokuapp.com/plants/${id}`;
 
 	function getPlant() {
 		fetch(url)
