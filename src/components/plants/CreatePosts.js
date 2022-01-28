@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Box from '@mui/material/Box';
@@ -10,6 +11,7 @@ import axios from 'axios';
 /*  imported mui modal refernce: https://mui.com/components/modal/#main-content -> discussed with Zoe on 1/27 and was approved */
 
 function CreatePosts(props) {
+	const navigate = useNavigate();
 	const handleOpen = () => setModal(true);
 	const handleClose = () => setModal(false);
 	const style = {
@@ -40,17 +42,23 @@ function CreatePosts(props) {
 		console.log(event.target.value);
 	};
 
+	const redirectToPlants = () => {
+		window.location.pathname = '/plants';
+	}
+
 	const createNewPlant = () => {
 		axios
 			.post('http://localhost:3000/plants', plant)
 			.then((res) => console.log(res.data))
 			.catch((error) => console.log(error));
 		handleClose();
+		
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		createNewPlant();
+		redirectToPlants();
 	};
 
 	return (
