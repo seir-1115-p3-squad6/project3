@@ -6,7 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 function Plants(props) {
 	const [plants, setPlants] = useState([]);
 
-	const url = 'https://seir1115-plants-api.herokuapp.com/plants';
+	const url = 'http://localhost:3000/plants';
 
 	useEffect(() => {
 		fetch(url)
