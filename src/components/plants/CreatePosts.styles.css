@@ -1,0 +1,52 @@
+
+.modal-bg {
+    background-image: url('https://www.datocms-assets.com/32926/1600733750-bottomrosesbackground.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 5px;
+    
+}
+
+.column-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.column-2 {
+    grid-column: 2;
+}
+
+.choices {
+    font-size: 15px;
+    color: darkslategrey;
+}
+
+.submit-btn {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100px;
+    height: 50px;
+}
+
+.cancel-btn {
+    color: red;
+    grid-row: 1;
+    grid-column: 2;
+}
