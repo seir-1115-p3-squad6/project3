@@ -12,8 +12,12 @@ import axios from 'axios';
 import './CreatePosts.styles.css';
 
 function CreatePosts(props) {
+	const [light, setLight] = useState(false);
+	const [moisture, setMoisture] = useState(false);
+	const [checked, setChecked] = useState(false)
 	const handleOpen = () => setModal(true);
 	const handleClose = () => setModal(false);
+
 	const style = {
 		position: 'absolute',
 		top: '50%',
@@ -25,7 +29,6 @@ function CreatePosts(props) {
 		border: '2px solid #000',
 		boxShadow: '0px 5px 5px',
 		p: 4,
-		
 	};
 
 	const [modal, setModal] = useState(false);
@@ -36,8 +39,8 @@ function CreatePosts(props) {
 		description: '',
 		purchase_link: '',
 		level: '',
-		light:'',
-		moisture: '',		
+		light: '',
+		moisture: '',
 	});
 
 	const handleChange = (event) => {
@@ -46,9 +49,30 @@ function CreatePosts(props) {
 		console.log(event.target.value);
 	};
 
+	const handleCheck = (e) => {
+		const target = e.target;
+		if (target.checked) {
+			setLight(target.value)
+			console.log(target.value);
+		}
+		console.log(e);
+	}
+
+	const handleLightChange = (event) => {
+		event.preventDeafult();
+		setLight(true);
+		console.log(light);
+	}
+		
+	const handleMoistureChange = (event) => {
+		event.preventDefault();
+		setMoisture(true);
+		console.log(moisture);
+	}
+
 	const redirectToPlants = () => {
 		window.location.pathname = '/plants';
-	}
+	};
 
 	const createNewPlant = () => {
 		axios
@@ -56,7 +80,6 @@ function CreatePosts(props) {
 			.then((res) => console.log(res.data))
 			.catch((error) => console.log(error));
 		handleClose();
-		
 	};
 
 	const handleSubmit = (event) => {
@@ -121,29 +144,52 @@ function CreatePosts(props) {
 								value={plant.purchase_link}
 							/>
 						</div>
-						<input 
-							type='submit' 
-							onClick={handleSubmit}  
+						<input
+							type='submit'
+							onClick={handleSubmit}
 							className='submit-btn'
 						/>
 						<div className='column-2'>
-							<p className='choices'> Level:</p>
-							<label htmlFor='light'>Beginner</label>
-							<input type='radio' id='light' name='light' value='light' />
-							<label htmlFor='light'>Moderate</label>
-							<input type='radio' id='light' name='light' value='light' />
-							<label htmlFor='light'>Advanced</label>
-							<input type='radio' id='light' name='light' value='light' />
-							<p className='choices'> Light:</p>
-							<label htmlFor='light'>high light</label>
-							<input type='radio' id='light' name='light' value='light' />
-							<label htmlFor='light'> low light</label>
-							<input type='radio' id='light' name='light' value='light' />
-							<p className='choices'> Moisture:</p>
-							<label htmlFor='light'>High</label>
-							<input type='radio' id='light' name='light' value='light' />
-							<label htmlFor='light'>Low</label>
-							<input type='radio' id='light' name='light' value='light' />
+							<form action=''>
+								<h4 className='choices'> Light:</h4>
+
+								<label htmlFor='light'>high light</label>
+								<input
+									type='radio'
+									id='light'
+									name='light'
+									value='high'
+									checked = {plant.light === 'high'}
+									onChange={handleCheck}
+								/>
+								<label htmlFor='light'> low light</label>
+								<input
+									type='radio'
+									id='light'
+									name='light'
+									value='light'
+									onChange={handleLightChange}
+								/>
+							</form>
+							<form action=''>
+								<h4 className='choices'> Moisture:</h4>
+								<label htmlFor='light'>High</label>
+								<input
+									type='radio'
+									id='light'
+									name='light'
+									value={plant.light}
+									onChange={handleMoistureChange}
+								/>
+								<label htmlFor='light'>Low</label>
+								<input
+									type='radio'
+									id='light'
+									name='light'
+									value={plant.light}
+									onChange={handleMoistureChange}
+								/>
+							</form>
 						</div>
 					</Typography>
 					<LocalFloristIcon />
