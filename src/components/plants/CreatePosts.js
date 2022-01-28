@@ -19,15 +19,13 @@ function CreatePosts(props) {
 		top: '50%',
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
-		width: 600,
-		height: 300,
 		bgcolor: 'background.paper',
 		border: '2px solid #000',
 		boxShadow: '0px 5px 5px',
-		p: 4,
-		display: 'flex',
-		justifyContent: 'center',
+		p: 2,
 		margin: 'auto',
+		maxWidth:'100%',
+		maxHeight: '100%',
 	};
 
 	const [modal, setModal] = useState(false);
@@ -74,7 +72,8 @@ function CreatePosts(props) {
 				<AddCircleIcon />
 			</Button>
 			<Modal open={modal} onClose={handleClose} className='modal-bg'>
-				<Box sx={style} onSubmit={handleSubmit}>
+				<Box sx={{...style, width: 350}} onSubmit={handleSubmit}>
+					<CancelIcon onClick={handleClose} className='cancel-btn' />
 					<Typography
 						id='modal-modal-title'
 						variant='h6'
@@ -128,16 +127,10 @@ function CreatePosts(props) {
 								className='modal__description'
 							/>
 						</div>
-						<input
-							type='submit'
-							onClick={handleSubmit}
-							className='submit-btn'
-						/>
 						<div className='column-2'>
 							<form action=''>
 								<h4 className='choices'> Light:</h4>
-
-								<label htmlFor='light'>high light</label>
+								<label htmlFor='light'>High</label>
 								<input
 									type='radio'
 									id='light'
@@ -145,15 +138,17 @@ function CreatePosts(props) {
 									value='high'
 									checked={plant.light === 'high'}
 									onChange={handleChange}
+									className='modal__radio-name'
 								/>
-								<label htmlFor='light'> low light</label>
+								<label htmlFor='light'>Low</label>
 								<input
 									type='radio'
 									id='light'
 									name='light'
-									value='light'
+									value='low'
 									checked={plant.light === 'low'}
 									onChange={handleChange}
+									className='modal__radio-name'
 								/>
 							</form>
 							<form action=''>
@@ -166,6 +161,7 @@ function CreatePosts(props) {
 									value='high'
 									checked={plant.moisture === 'high'}
 									onChange={handleChange}
+									className='modal__radio-name'
 								/>
 								<label htmlFor='moisture'>Low</label>
 								<input
@@ -175,11 +171,16 @@ function CreatePosts(props) {
 									value='low'
 									checked={plant.moisture === 'low'}
 									onChange={handleChange}
+									className='modal__radio-name'
 								/>
 							</form>
 						</div>
+						<input
+							type='submit'
+							onClick={handleSubmit}
+							className='submit-btn'
+						/>
 					</Typography>
-					<CancelIcon onClick={handleClose} className='cancel-btn' />
 				</Box>
 			</Modal>
 		</div>

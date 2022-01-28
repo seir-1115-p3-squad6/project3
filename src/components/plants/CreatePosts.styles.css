@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 .modal-bg {
     background-image: url('../../../public/assets/meritt-thomas-sbkdilomylc-unsplash.jpg');
@@ -13,46 +19,13 @@
 
 .form-title {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    border-bottom: 1px solid var(--grey);
+
 }
 
 .form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows:50px 50px 50px 50px 50px ;
-    grid-gap: 5px;
-}
-
-.column-1 {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.column-2 {
-    display: inline-block;
-    grid-column: 2;
-}
-
-.modal__plant-name {
-    grid-row: 1;
-}
-
-.modal__scientific-name {
-    grid-row: 2;
-}
-
-.modal__imageUrl{
-    grid-row: 3;
-
-}
-
-.modal__description {
-    grid-row: 4;
-}
-
-.modal__purchase-link {
-    grid-row: 5;
 }
 .choices {
     font-size: 15px;
@@ -60,21 +33,25 @@
 }
 
 .submit-btn {
-    grid-column: 2;
-    grid-row: 5;
     width: 100px;
-    height: 50px;
+    height: 20px;
+    background-color: var(--orange);
+    color: whitesmoke;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 25px;
 }
 
 .cancel-btn {
-    color: red;
-    grid-row: 1;
-    grid-column: 2;
+    color: var(--orange);
 }
 .flower {
     width: 70px;
 }
 
-input[type=text] {
-    color: seashell;
+input[type=text]:focus {
+    outline: none;
 }
