@@ -6,8 +6,13 @@ import axios from 'axios';
 
 function Plants(props) {
 	const [plants, setPlants] = useState([]);
+	// const [style, setStyle] = useState('');
 
 	const url = 'https://seir1115-plants-api.herokuapp.com/plants';
+
+	const handleUnfavorite = async () => {
+		await axios.put(url, { favorite: false });
+	};
 
 	useEffect(() => {
 		fetch(url)
@@ -22,8 +27,8 @@ function Plants(props) {
 			<CreatePosts />
 			{plants.map((plant) =>
 				!plant.favorite ? (
-					<div>
-						<Link to={`${plant._id}`} key={plant._id}>
+					<div key={plant._id}>
+						<Link to={`${plant._id}`}>
 							<div className='card'>
 								<div className='card-image'>
 									<img src={plant.image} alt={plant.name} />
@@ -36,8 +41,8 @@ function Plants(props) {
 						<FavoriteIcon className='heart'></FavoriteIcon>
 					</div>
 				) : (
-					<div>
-						<Link to={`${plant._id}`} key={plant._id}>
+					<div key={plant._id}>
+						<Link to={`${plant._id}`}>
 							<div className='card'>
 								<div className='card-image'>
 									<img src={plant.image} alt={plant.name} />
@@ -47,7 +52,9 @@ function Plants(props) {
 								</div>
 							</div>
 						</Link>
-						<FavoriteIcon className='heartAlive'></FavoriteIcon>
+						<FavoriteIcon
+							onClick={handleUnfavorite}
+							className='heartAlive'></FavoriteIcon>
 					</div>
 				)
 			)}
