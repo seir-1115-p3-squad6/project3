@@ -108,6 +108,10 @@ function CreatePosts(props) {
 							value={plant.purchase_link}
 						/>
 						<input type='submit' onClick={handleSubmit} />
+						<label htmlFor="light">Light Degree</label>
+						<input type="radio" id='light' name='light' />
+
+
 					</Typography>
 
 					<CancelIcon onClick={handleClose} />
