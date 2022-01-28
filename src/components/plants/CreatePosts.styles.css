@@ -1,6 +1,6 @@
 
 .modal-bg {
-    background-image: url('https://www.datocms-assets.com/32926/1600733750-bottomrosesbackground.jpg');
+    background-image: url('../../../public/assets/meritt-thomas-sbkdilomylc-unsplash.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,15 +13,15 @@
 
 .form-title {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 .form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows:50px 50px 50px 50px 50px ;
     grid-gap: 5px;
-    
 }
 
 .column-1 {
@@ -30,9 +30,30 @@
 }
 
 .column-2 {
+    display: inline-block;
     grid-column: 2;
 }
 
+.modal__plant-name {
+    grid-row: 1;
+}
+
+.modal__scientific-name {
+    grid-row: 2;
+}
+
+.modal__imageUrl{
+    grid-row: 3;
+
+}
+
+.modal__description {
+    grid-row: 4;
+}
+
+.modal__purchase-link {
+    grid-row: 5;
+}
 .choices {
     font-size: 15px;
     color: darkslategrey;
@@ -40,7 +61,7 @@
 
 .submit-btn {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 5;
     width: 100px;
     height: 50px;
 }
@@ -49,4 +70,11 @@
     color: red;
     grid-row: 1;
     grid-column: 2;
+}
+.flower {
+    width: 70px;
+}
+
+input[type=text] {
+    color: seashell;
 }

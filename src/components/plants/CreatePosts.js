@@ -5,16 +5,12 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import LocalFloristIcon from '@mui/icons-material/LocalFlorist';
 import axios from 'axios';
 // import axios from 'axios';
 /*  imported mui modal refernce: https://mui.com/components/modal/#main-content -> discussed with Zoe on 1/27 and was approved */
 import './CreatePosts.styles.css';
 
 function CreatePosts(props) {
-	const [light, setLight] = useState(false);
-	const [moisture, setMoisture] = useState(false);
-	const [checked, setChecked] = useState(false)
 	const handleOpen = () => setModal(true);
 	const handleClose = () => setModal(false);
 
@@ -24,11 +20,14 @@ function CreatePosts(props) {
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
 		width: 600,
-		height: 600,
+		height: 300,
 		bgcolor: 'background.paper',
 		border: '2px solid #000',
 		boxShadow: '0px 5px 5px',
 		p: 4,
+		display: 'flex',
+		justifyContent: 'center',
+		margin: 'auto',
 	};
 
 	const [modal, setModal] = useState(false);
@@ -38,7 +37,6 @@ function CreatePosts(props) {
 		image: '',
 		description: '',
 		purchase_link: '',
-		level: '',
 		light: '',
 		moisture: '',
 	});
@@ -49,26 +47,8 @@ function CreatePosts(props) {
 		console.log(event.target.value);
 	};
 
-	const handleCheck = (e) => {
-		const target = e.target;
-		if (target.checked) {
-			setLight(target.value)
-			console.log(target.value);
-		}
-		console.log(e);
-	}
+	
 
-	const handleLightChange = (event) => {
-		event.preventDeafult();
-		setLight(true);
-		console.log(light);
-	}
-		
-	const handleMoistureChange = (event) => {
-		event.preventDefault();
-		setMoisture(true);
-		console.log(moisture);
-	}
 
 	const redirectToPlants = () => {
 		window.location.pathname = '/plants';
@@ -101,7 +81,6 @@ function CreatePosts(props) {
 						component='h2'
 						className='form-title'>
 						Create an Angel
-						<CancelIcon onClick={handleClose} className='cancel-btn' />
 					</Typography>
 					<Typography
 						id='modal-modal-description'
@@ -114,13 +93,15 @@ function CreatePosts(props) {
 								onChange={handleChange}
 								id='name'
 								value={plant.name}
+								className='modal__plant-name'
 							/>
-							<label htmlFor='scientific_name'>scientific_name:</label>
+							<label htmlFor='scientific_name'>Scientific Name:</label>
 							<input
 								type='text'
 								onChange={handleChange}
 								id='scientific_name'
 								value={plant.scientific_name}
+								className='modal__scientific-name'
 							/>
 							<label htmlFor='image'>Image URl:</label>
 							<input
@@ -128,6 +109,7 @@ function CreatePosts(props) {
 								onChange={handleChange}
 								id='image'
 								value={plant.image}
+								className='modal__imageUrl'
 							/>
 							<label htmlFor='description'>Description:</label>
 							<input
@@ -135,6 +117,7 @@ function CreatePosts(props) {
 								onChange={handleChange}
 								id='description'
 								value={plant.description}
+								className='modal__description'
 							/>
 							<label htmlFor='purchase_link'>Purchase Link:</label>
 							<input
@@ -142,6 +125,7 @@ function CreatePosts(props) {
 								onChange={handleChange}
 								id='purchase_link'
 								value={plant.purchase_link}
+								className='modal__description'
 							/>
 						</div>
 						<input
@@ -159,8 +143,8 @@ function CreatePosts(props) {
 									id='light'
 									name='light'
 									value='high'
-									checked = {plant.light === 'high'}
-									onChange={handleCheck}
+									checked={plant.light === 'high'}
+									onChange={handleChange}
 								/>
 								<label htmlFor='light'> low light</label>
 								<input
@@ -168,31 +152,34 @@ function CreatePosts(props) {
 									id='light'
 									name='light'
 									value='light'
-									onChange={handleLightChange}
+									checked={plant.light === 'low'}
+									onChange={handleChange}
 								/>
 							</form>
 							<form action=''>
 								<h4 className='choices'> Moisture:</h4>
-								<label htmlFor='light'>High</label>
+								<label htmlFor='moisture'>High</label>
 								<input
 									type='radio'
-									id='light'
+									id='moisture'
 									name='light'
-									value={plant.light}
-									onChange={handleMoistureChange}
+									value='high'
+									checked={plant.moisture === 'high'}
+									onChange={handleChange}
 								/>
-								<label htmlFor='light'>Low</label>
+								<label htmlFor='moisture'>Low</label>
 								<input
 									type='radio'
-									id='light'
+									id='moisture'
 									name='light'
-									value={plant.light}
-									onChange={handleMoistureChange}
+									value='low'
+									checked={plant.moisture === 'low'}
+									onChange={handleChange}
 								/>
 							</form>
 						</div>
 					</Typography>
-					<LocalFloristIcon />
+					<CancelIcon onClick={handleClose} className='cancel-btn' />
 				</Box>
 			</Modal>
 		</div>
