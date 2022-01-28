@@ -13,9 +13,9 @@ code {
 }
 
 .heart {
-	color: grey;
+	color: red;
 }
 
-.heartAlive {
-	color: pink;
+.anti-heart {
+	color: grey;
 }

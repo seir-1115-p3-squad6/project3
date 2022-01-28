@@ -2,17 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CreatePosts from './CreatePosts';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import axios from 'axios';
 
 function Plants(props) {
 	const [plants, setPlants] = useState([]);
-	// const [style, setStyle] = useState('');
 
 	const url = 'https://seir1115-plants-api.herokuapp.com/plants';
-
-	const handleUnfavorite = async () => {
-		await axios.put(url, { favorite: false });
-	};
 
 	useEffect(() => {
 		fetch(url)
@@ -38,7 +32,7 @@ function Plants(props) {
 								</div>
 							</div>
 						</Link>
-						<FavoriteIcon className='heart'></FavoriteIcon>
+						<FavoriteIcon className='anti-heart'></FavoriteIcon>
 					</div>
 				) : (
 					<div key={plant._id}>
@@ -52,9 +46,7 @@ function Plants(props) {
 								</div>
 							</div>
 						</Link>
-						<FavoriteIcon
-							onClick={handleUnfavorite}
-							className='heartAlive'></FavoriteIcon>
+						<FavoriteIcon className='heart'></FavoriteIcon>
 					</div>
 				)
 			)}
