@@ -1,0 +1,19 @@
+footer {
+    background-color: var(--transparent-grey); 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-list {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	list-style: none;
+	margin: 0px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 0rem;
+    font-family: 'Source Serif 4';
+    font-size: 16px;
+}
