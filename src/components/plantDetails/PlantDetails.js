@@ -2,12 +2,15 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
-import style from './plantDetails.css'
-const PlantDetails = ({ match, history }) => {
-	const { id } = useParams();
+import './plantDetails.css';
+// import { useHistory } from 'react-router-dom';
 
+const PlantDetails = () => {
+	const { id } = useParams();
+	// const history = useHistory();
 	const [plant, setPlant] = useState(null);
-	const url = `https://seir1115-plants-api.herokuapp.com/plants/${id}`;
+
+	const url = `http://localhost:3000/plants/${id}`;
 
 	function getPlant() {
 		fetch(url)
@@ -21,14 +24,18 @@ const PlantDetails = ({ match, history }) => {
 		getPlant();
 	}, [plant]);
 
+	// useEffect(() => {
+	// 	axios(`${url}/${id}`)
+	// 		.then(({ data }) => {
+	// 			setPlant(data);
+	// 		})
+	// 		.catch(console.error);
+	// }, []);
+
 	// referred to iceCream api for reference
-	const handleDelete = () => {
-		axios
-			.delete(`${url}/plants/${id}`)
-			.then(() => {
-				history.push('/');
-			})
-			.catch(console.error);
+	const handleDelete = async () => {
+		await axios.delete(url);
+		// return response.data;
 	};
 
 	if (!plant) {
