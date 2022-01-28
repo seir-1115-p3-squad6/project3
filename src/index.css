@@ -17,3 +17,11 @@ code {
 .anti-heart {
 	color: grey;
 }
+
+:root {
+	--maroon: rgb(104, 40, 15);
+	--grey: rgb(169, 177, 167);
+	--green: rgb(73, 102, 59);
+	--orange: rgb(217, 119, 59);
+	--transparent-orange: rgb(217, 119, 59, 0.5);
+}
