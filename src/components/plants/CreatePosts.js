@@ -1,15 +1,30 @@
 import React, { useState } from 'react';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 // import axios from 'axios';
 /*  imported mui modal refernce: https://mui.com/components/modal/#main-content -> discussed with Zoe on 1/27 and was approved */
 
 function CreatePosts(props) {
-	const navigate = useNavigate();
+	const handleOpen = () => setModal(true);
+	const handleClose = () => setModal(false);
+	const style = {
+		position: 'absolute',
+		top: '50%',
+		left: '50%',
+		transform: 'translate(-50%, -50%)',
+		width: 400,
+		height: 400,
+		bgcolor: 'background.paper',
+		border: '2px solid #000',
+		boxShadow: '10px 5px 5px red',
+		p: 4,
+	};
+
 	const [modal, setModal] = useState(false);
 	const [plant, setPlant] = useState({
 		name: '',
@@ -26,39 +41,16 @@ function CreatePosts(props) {
 	};
 
 	const createNewPlant = () => {
-		fetch('http://localhost:3000/plants', {
-			method: 'POST',
-			body: JSON.stringify(plant),
-			header: {
-				'Content-Type': 'application/json',
-			},
-		})
-			.then((res) => res.json())
-			.then((res) => {
-				navigate('/plants');
-				setPlant(res);
-				console.log(res);
-			});
+		axios
+			.post('http://localhost:3000/plants', plant)
+			.then((res) => console.log(res.data))
+			.catch((error) => console.log(error));
+		handleClose();
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		createNewPlant();
-	};
-
-	const handleOpen = () => setModal(true);
-	const handleClose = () => setModal(false);
-	const style = {
-		position: 'absolute',
-		top: '50%',
-		left: '50%',
-		transform: 'translate(-50%, -50%)',
-		width: 400,
-		height: 400,
-		bgcolor: 'background.paper',
-		border: '2px solid #000',
-		boxShadow: '10px 5px 5px red',
-		p: 4,
 	};
 
 	return (
@@ -67,7 +59,7 @@ function CreatePosts(props) {
 				<AddCircleIcon />
 			</Button>
 			<Modal open={modal} onClose={handleClose}>
-				<Box sx={style}>
+				<Box sx={style} onSubmit={handleSubmit}>
 					<Typography id='modal-modal-title' variant='h6' component='h2'>
 						Create an Angel
 					</Typography>
@@ -79,7 +71,7 @@ function CreatePosts(props) {
 							id='name'
 							value={plant.name}
 						/>
-						<label htmlFor='scientific-name'>scientific_name:</label>
+						<label htmlFor='scientific_name'>scientific_name:</label>
 						<input
 							type='text'
 							onChange={handleChange}
@@ -107,8 +99,10 @@ function CreatePosts(props) {
 							id='purchase_link'
 							value={plant.purchase_link}
 						/>
-						<button onClick={handleSubmit}>Submit</button>
+						<input type='submit' onClick={handleSubmit} />
 					</Typography>
+
+					<CancelIcon onClick={handleClose} />
 				</Box>
 			</Modal>
 		</div>
