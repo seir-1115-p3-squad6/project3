@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# House Plant Haven
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+House Plant Heaven is an app where you can find a variety of indoor plants. You can expand your knowledge about different varieties, choose plants based on your specific needs, find distributers, and save your plant crushes to a favorites list. This project was created using react, css, html, javascript, node.js, express, mongoDB, mongoose, heroku, and netlify.
 
-## Available Scripts
+## App Screenshots
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+1. Fork and clone down the repository to your machine.
+2. cd into the repo
+3. Open in VScode by running code . in your terminal
+4. Run npm i or npm install in your terminal
+5. Run npm start in your terminal
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## User Stories
 
-### `npm test`
+### MVP
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* As a user, I want to be able to navigate to see all the plants in the database, so that I can view all the plant options.
+* As a user, I want to be able to view plants by descriptive categories, so that I can narrow my search to types of plants I'm interested in.
+* As a user, I want to be able to update a plant in the database, so that I can add that plant to my favorites list for future reference.
+* As a user, I want to be able to create a plant for the database, so that I can see a more broad range of plant options to choose from.
+* As a user, I want to be able to navigate to individual plants from the database, and view more detailed information about them.
+* As a user, I want to be able to delete a plant from the database, so that I can customize my plant search based on preference.
+* As a user, I want my web app to use React, so that the site is more streamlined, and doesn't reload with each new navigation.
+* As a user, I want my navigation bar to utilize react router, so that the site navigates to each category seamlessly from the home page.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Stretch Goals
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* As a user, I want to be able to be noted in the system as a User, so that my plants and favorites are saved to my login.
+* As a user, I want to have restrictions on what plants I can delete or edit, so that the main database stays accurate.
+* As a user, I want to be able to use a search bar to find relevant results, so that I don't have to use a nav bar.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Wire Frames
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Wireframe 1](public/assets/3e14d700-7d33-11ec-9c7f-a87cfb943f8a.png)
+![Wireframe 2](public/assets/54bb2e00-7d33-11ec-807b-dc1161fcbace.png)
+![Wireframe 3](public/assets/43722180-7d33-11ec-9477-48fc96a055b5.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Major Hurdles
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
