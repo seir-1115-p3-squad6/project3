@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import './nav.css';
 
 function Nav(props) {
 	return (
-		<nav className=''>
-			<ul className='navigation'>
+		<nav className='navigation'>
+			<ul>
 				<li className='about-nav'>
 					<Link to='/'>About</Link>
 				</li>
