@@ -6,6 +6,8 @@ import Plants from './components/plants/Plants';
 import Footer from './components/footer/Footer';
 import PlantDetails from './components/plantDetails/PlantDetails';
 
+import './app.css';
+
 function App() {
 	return (
 		<>
