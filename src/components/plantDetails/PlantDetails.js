@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
 import './plantDetails.css';
-// import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const PlantDetails = () => {
 	const { id } = useParams();
@@ -11,6 +11,8 @@ const PlantDetails = () => {
 	const [plant, setPlant] = useState(null);
 
 	const url = `http://localhost:3000/plants/${id}`;
+
+	const navigate = useNavigate();
 
 	function getPlant() {
 		fetch(url)
@@ -24,33 +26,14 @@ const PlantDetails = () => {
 		getPlant();
 	}, [plant]);
 
-	// useEffect(() => {
-	// 	axios(`${url}/${id}`)
-	// 		.then(({ data }) => {
-	// 			setPlant(data);
-	// 		})
-	// 		.catch(console.error);
-	// }, []);
-
 	// referred to iceCream api for reference
+	// referenced this tutorial on useNavigate https://www.digitalocean.com/community/tutorials/react-react-router-v6
 	const handleDelete = async () => {
 		await axios.delete(url);
-		// return response.data;
+		navigate(`/plants`, { replace: true });
 	};
 
-	const handleFavorite = async () => {
-		
-		await axios.put(url, { favorite: true });
-		console.log(plant.favorite);
-	};
-
-	const handleUnfavorite = async () => {
-		
-		await axios.put(url, { favorite: false });
-		 console.log(plant.favorite);
-	};
-
-	if (!plant || plant.favorite) {
+	if (!plant) {
 		return <h1>loading plants</h1>;
 	}
 	return (
@@ -73,10 +56,6 @@ const PlantDetails = () => {
 					</a>
 				</button>
 				<button onClick={handleDelete}>Kill This Plant</button>
-				<button onClick={handleFavorite}>Heart</button>
-				<button onClick={handleUnfavorite}>Anti-Heart</button>
-				
-				<p>Heart</p>
 			</div>
 		</div>
 	);
