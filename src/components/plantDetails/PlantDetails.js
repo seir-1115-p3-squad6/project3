@@ -50,24 +50,27 @@ const PlantDetails = () => {
 	if (!plant.favorite) {
 		return (
 			<div className='plant-card'>
+				<h1 className='plant-name'>{plant.name}</h1>
 				<div>
 					<img src={plant.image} alt={plant.name} />
 				</div>
 				<div className='plant-info-div'>
-					<h1>{plant.name}</h1>
 					<h2> Scientific Name: {plant.scientific_name}</h2>
-					<p>Descrition: {plant.description}</p>
+					<h4>Descrition:</h4>
+					<p> {plant.description}</p>
 					<ul>
 						<li>Moisture: requires {plant.moisture} moisture</li>
 						<li>Light: requires {plant.light} light</li>
 					</ul>
-					<button>
-						<a className='plant-purchase' href={plant.purchase_link}>
-							Purchace Plant here
-						</a>
-					</button>
-					<button onClick={handleDelete}>Kill This Plant</button>
-					<FavoriteIcon onClick={handleFavorite} className='anti-heart' />
+					<div className='buttons'>
+						<button>
+							<a className='plant-purchase' href={plant.purchase_link}>
+								Purchace Plant here
+							</a>
+						</button>
+						<button onClick={handleDelete}>Kill This Plant</button>
+						<FavoriteIcon onClick={handleFavorite} className='anti-heart' />
+					</div>
 				</div>
 			</div>
 		);
