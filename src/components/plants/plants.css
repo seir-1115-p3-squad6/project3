@@ -1,0 +1,15 @@
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.image {
+	height: 20%;
+}
+
+.card {
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: row;
+	justify-content: left;
+}
