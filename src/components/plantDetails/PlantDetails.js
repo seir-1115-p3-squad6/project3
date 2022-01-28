@@ -51,8 +51,14 @@ const PlantDetails = () => {
 		return (
 			<div className='plant-card'>
 				<h1 className='plant-name'>{plant.name}</h1>
-				<div>
+				<div className="plant-image-container">
 					<img src={plant.image} alt={plant.name} />
+					<FavoriteIcon
+						width='30'
+						height='30'
+						onClick={handleFavorite}
+						className='anti-heart'
+					/>
 				</div>
 				<div className='plant-info-div'>
 					<h2> Scientific Name: {plant.scientific_name}</h2>
@@ -69,7 +75,6 @@ const PlantDetails = () => {
 							</a>
 						</button>
 						<button onClick={handleDelete}>Kill This Plant</button>
-						<FavoriteIcon onClick={handleFavorite} className='anti-heart' />
 					</div>
 				</div>
 			</div>
@@ -79,6 +84,7 @@ const PlantDetails = () => {
 			<div className='plant-card'>
 				<div>
 					<img src={plant.image} alt={plant.name} />
+					<FavoriteIcon onClick={handleUnfavorite} className='heart' />
 				</div>
 				<div className='plant-info-div'>
 					<h1>{plant.name}</h1>
@@ -94,7 +100,6 @@ const PlantDetails = () => {
 						</a>
 					</button>
 					<button onClick={handleDelete}>Kill This Plant</button>
-					<FavoriteIcon onClick={handleUnfavorite} className='heart' />
 				</div>
 			</div>
 		);

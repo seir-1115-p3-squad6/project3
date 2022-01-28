@@ -11,7 +11,7 @@
 
 img {
 	margin-top: 0;
-	margin: 2em;
+
 	border: 4px solid rgb(103, 214, 103);
 }
 .plant-name {
@@ -38,39 +38,32 @@ p {
 h4 {
 	margin-bottom: 0;
 }
-button {
-	padding: 4em;
-	margin: 2em;
-}
 
 .buttons {
 	display: flex;
 	justify-content: center;
 }
 
-
-:root {
+/* :root {
 	--maroon: rgb(104, 40, 15);
 	--grey: rgb(169, 177, 167);
 	--green: rgb(73, 102, 59);
 	--orange: rgb(217, 119, 59);
 	--transparent-orange: rgb(217, 119, 59, 0.5);
-}
-
-
+} */
 
 button {
+	margin: 2em;
 	background-color: var(--grey);
 	border-radius: 100px;
-	box-shadow: var(--green) 0 -25px 18px -14px inset,
-		var(--green) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
-		var(--green) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+	box-shadow: var(--green) 0 -25px 18px -14px inset, var(--green) 0 1px 2px,
+		var(--green) 0 2px 4px, var(--green) 0 4px 8px, var(--green) 0 8px 16px,
 		var(--green) 0 16px 32px;
-	color: green;
+	color: var(--maroon);
 	cursor: pointer;
 	display: inline-block;
 	font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-	padding: 7px 20px;
+	padding: 16px 28px;
 	text-align: center;
 	text-decoration: none;
 	transition: all 250ms;
@@ -82,9 +75,24 @@ button {
 }
 
 button:hover {
-	box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
-		rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
-		rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
-		rgba(44, 187, 99, 0.25) 0 16px 32px;
+	box-shadow: var(--orange) 0 -25px 18px -14px inset, var(--orange) 0 1px 2px,
+		rgba(44, 187, 99, 0.25) 0 2px 4px, var(--orange) 0 4px 8px,
+		rgba(44, 187, 99, 0.25) 0 8px 16px, var(--orange) 0 16px 32px;
 	transform: scale(1.05) rotate(-1deg);
+}
+
+.anti-heart,
+.heart {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	z-index: 2;
+	bottom: 16px;
+	right: 16px;
+	cursor: pointer;
+}
+
+.plant-image-container {
+	position: relative;
+	margin: 2em;
 }
