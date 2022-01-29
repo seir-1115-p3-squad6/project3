@@ -25,7 +25,7 @@ const PlantDetails = () => {
 
 	useEffect(() => {
 		getPlant();
-	}, []);
+	}, [plant]);
 
 	const handleFavorite = async () => {
 		await axios.put(url, { favorite: true });
@@ -63,7 +63,7 @@ const PlantDetails = () => {
 					</div>
 					<div className='plant-info-div'>
 						<h2> Scientific Name: {plant.scientific_name}</h2>
-						<h4>Descrition:</h4>
+						<h4 className='plant-description'>Descrition:</h4>
 						<p className='plant-description'> {plant.description}</p>
 						<ul className='ul-plant'>
 							<li>
@@ -95,7 +95,7 @@ const PlantDetails = () => {
 	} else {
 		return (
 			<div className='plant-full-container'>
-				<h1>{plant.name}</h1>
+				<h1 className='plant-name'>{plant.name}</h1>
 				<div className='plant-card'>
 					<div className='plant-image-container'>
 						<img src={plant.image} alt={plant.name} />
@@ -107,8 +107,9 @@ const PlantDetails = () => {
 						/>
 					</div>
 					<div className='plant-info-div'>
-						<h2>Scientific Name:{plant.scientific_name}</h2>
-						<p>Descrition: {plant.description}</p>
+						<h2>Scientific Name: {plant.scientific_name}</h2>
+						<h4 className='plant-description'>Descrition:</h4>
+						<p className='plant-description'>{plant.description}</p>
 						<ul className='ul-plant'>
 							<li>
 								<strong>Difficulty Level:</strong> {plant.difficulty}
@@ -124,7 +125,11 @@ const PlantDetails = () => {
 						</ul>
 						<div className='buttons'>
 							<button>
-								<a className='plant-purchase' href={plant.purchase_link}>
+								<a
+									className='plant-purchase'
+									href={plant.purchase_link}
+									target='_blank'
+									rel='noreferrer'>
 									Purchase Plant here
 								</a>
 							</button>
