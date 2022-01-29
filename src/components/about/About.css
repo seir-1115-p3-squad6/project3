@@ -18,11 +18,19 @@
     line-height: 0.85;
 }
 
-@media only screen and (max-width: 600px) {
-	p {
-		text-align: center;
+@media only screen and (max-width: 200px) {
+	.About__text, .about-paragraph {
         display: flex;
 		flex-direction: column;
+        flex-wrap: wrap;
         font-size: calc(1rem + 1vw);
+        justify-content: center;
 	}
+    .about-paragraph::first-letter {
+        font-size: 400%;
+        color: rgb(73, 102, 59);
+        float:left;
+        margin: 0 .1em 0 0;
+        line-height: 0.85; 
+    }
   }
