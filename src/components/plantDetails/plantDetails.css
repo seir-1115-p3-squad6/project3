@@ -1,9 +1,4 @@
 .plant-card {
-	/* display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: 2em; */
 	display: grid;
 	grid-template-columns: 1;
 	grid-template-rows: 4;
@@ -26,14 +21,6 @@ h2 {
 .plant-description {
 	font-size: 1.5em;
 	margin-top: 0;
-}
-
-.plant-description::first-letter {
-	font-size: 400%;
-	color: rgb(73, 102, 59);
-	float: left;
-	margin: 0 0.1em 0 0;
-	line-height: 0.85;
 }
 
 .plant-info-div {
