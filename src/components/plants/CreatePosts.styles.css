@@ -98,8 +98,21 @@ input[type=text]:focus {
 
 .modalBtn {
     color: var(--orange);
+    display: flex;
+    justify-content: space-between;
 }
 
 .modal__radio-name {
     margin-right: 10px;
+}
+
+.sub-heading {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--transparent-orange);
+
+}
+
+.add-paragraph {
+    font-size: 20px;
 }

@@ -78,8 +78,8 @@ const PlantDetails = () => {
 						</ul>
 						<div className='buttons'>
 							<button>
-								<a className='plant-purchase' href={plant.purchase_link}>
-									Purchase Plant here
+								<a className='plant-purchase' href={plant.purchase_link} target='_blank'>
+									Purchace Plant here
 								</a>
 							</button>
 							<button onClick={handleDelete}>Kill This Plant</button>

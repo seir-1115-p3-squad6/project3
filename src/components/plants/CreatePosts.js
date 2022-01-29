@@ -36,6 +36,7 @@ function CreatePosts(props) {
 		image: '',
 		description: '',
 		purchase_link: '',
+		difficulty:'',
 		light: '',
 		moisture: '',
 	});
@@ -66,9 +67,11 @@ function CreatePosts(props) {
 
 	return (
 		<div className='create'>
-			<Button onClick={handleOpen}>
-				<AddCircleIcon className='modalBtn' />
-			</Button>
+			<div className='sub-heading'>
+				<p className='add-paragraph'>Don't see what you're For?</p>
+					<AddCircleIcon className='modalBtn' onClick={handleOpen} />
+			</div>
+
 			<Modal open={modal} onClose={handleClose} className='modal-bg'>
 				<Box sx={{ ...style, width: 350 }} onSubmit={handleSubmit}>
 					<CancelIcon onClick={handleClose} className='cancel-btn' />
@@ -77,7 +80,7 @@ function CreatePosts(props) {
 						variant='h6'
 						component='h2'
 						className='form-title'>
-						Create an Angel
+						Add a plant
 					</Typography>
 					<Typography
 						id='modal-modal-description'
