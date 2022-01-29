@@ -9,7 +9,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 const PlantDetails = () => {
 	const { id } = useParams();
 
-	const [plant, setPlant] = useState('');
+	const [plant, setPlant] = useState(null);
 
 	const url = `http://localhost:3000/plants/${id}`;
 
@@ -25,16 +25,16 @@ const PlantDetails = () => {
 
 	useEffect(() => {
 		getPlant();
-	}, [plant]);
+	}, []);
 
 	const handleFavorite = async () => {
 		await axios.put(url, { favorite: true });
-		console.log(plant.favorite);
+		navigate(`/plants`, { replace: true });
 	};
 
 	const handleUnfavorite = async () => {
 		await axios.put(url, { favorite: false });
-		console.log(plant.favorite);
+		navigate(`/plants`, { replace: true });
 	};
 
 	// referred to iceCream api for reference
