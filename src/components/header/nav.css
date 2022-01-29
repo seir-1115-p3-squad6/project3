@@ -1,5 +1,5 @@
 nav {
-	background-color: var(--transparent-grey);
+	background-color: var(--grey);
 }
 
 nav ul {
@@ -7,10 +7,12 @@ nav ul {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	list-style: none;
+	text-decoration: underline;
 	margin: 0px;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	padding-left: 0rem;
+	font-size: 2em;
 }
 
 nav li {
@@ -36,4 +38,4 @@ a {
 	nav li {
 		margin: 0.8em 0;
 	}
-  }
+}
