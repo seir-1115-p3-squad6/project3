@@ -1,6 +1,6 @@
 .card-container {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	margin-bottom: 5rem;
 }
 
@@ -12,6 +12,7 @@
 	position: absolute;
 	background-size: cover;
 	border: 0;
+	
 }
 
 .card-img-contain {
@@ -20,6 +21,7 @@
 	align-items: center;
 	height: 18rem;
 	overflow: hidden;
+	/* position: relative; */
 }
 
 .card {
@@ -41,13 +43,6 @@
 	border: 0;
 }
 
-/* .heart {
-	position: absolute;
-    z-index: 2;
-    bottom: 16px;
-    right: 16px;
-    cursor: pointer;
-} */
 
 .non-heart {
 	/* border: 1rem solid red; */
@@ -58,6 +53,15 @@
 	/* border: 1rem solid blue; */
 	color: red;
 }
+
+/* .non-heart, .red-heart {
+	position: absolute;
+	z-index: 2;
+	bottom: 20px;
+	right: 40px;
+	cursor: pointer;
+} */
+
 
 @media (min-width: 600px) {
 	.card-img-contain {
