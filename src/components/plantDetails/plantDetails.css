@@ -99,9 +99,9 @@ button:hover {
 
 @media (min-width: 600px) {
 	img {
-		width: 800px;
+		width: 40%;
 		margin: 5em;
-		
+		margin-left: 1em;
 	}
 	.anti-heart,
 	.heart {
