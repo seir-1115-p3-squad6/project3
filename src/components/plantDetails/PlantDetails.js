@@ -65,7 +65,10 @@ const PlantDetails = () => {
 						<h2> Scientific Name: {plant.scientific_name}</h2>
 						<h4>Descrition:</h4>
 						<p> {plant.description}</p>
-						<ul>
+						<ul className='ul-plant'>
+							<li>
+								<strong>Difficulty Level:</strong> {plant.difficulty}
+							</li>
 							<li>
 								<strong>Moisture:</strong> requires {plant.moisture} moisture
 							</li>
@@ -76,7 +79,7 @@ const PlantDetails = () => {
 						<div className='buttons'>
 							<button>
 								<a className='plant-purchase' href={plant.purchase_link}>
-									Purchace Plant here
+									Purchase Plant here
 								</a>
 							</button>
 							<button onClick={handleDelete}>Kill This Plant</button>
@@ -104,6 +107,9 @@ const PlantDetails = () => {
 						<p>Descrition: {plant.description}</p>
 						<ul className='ul-plant'>
 							<li>
+								<strong>Difficulty Level:</strong> {plant.difficulty}
+							</li>
+							<li>
 								{' '}
 								<strong>Moisture:</strong> requires {plant.moisture} moisture
 							</li>
@@ -115,7 +121,7 @@ const PlantDetails = () => {
 						<div className='buttons'>
 							<button>
 								<a className='plant-purchase' href={plant.purchase_link}>
-									Purchace Plant here
+									Purchase Plant here
 								</a>
 							</button>
 							<button onClick={handleDelete}>Kill This Plant</button>
