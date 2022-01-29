@@ -1,0 +1,10 @@
+- App
+    - Header (logo & navbar) - the header navigation with the logo and navbar.
+
+        - Nav ( about & plants) - the lists of navigation links.
+        
+    - plants - the main component on this page.
+        - CreatePosts (modal)- component for making api post requests.
+
+        - PlantDetails - component for an individual plant result.
+    
