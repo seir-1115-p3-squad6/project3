@@ -64,7 +64,7 @@ const PlantDetails = () => {
 					<div className='plant-info-div'>
 						<h2> Scientific Name: {plant.scientific_name}</h2>
 						<h4>Descrition:</h4>
-						<p class="plant-description"> {plant.description}</p>
+						<p className="plant-description"> {plant.description}</p>
 						<ul className='ul-plant'>
 							<li>
 								<strong>Difficulty Level:</strong> {plant.difficulty}
