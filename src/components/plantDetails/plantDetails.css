@@ -7,12 +7,14 @@
 	display: grid;
 	grid-template-columns: 1;
 	grid-template-rows: 4;
+	
+	
 }
 
 img {
 	margin-top: 0;
-
 	border: 4px solid rgb(103, 214, 103);
+	width: 95%;
 }
 .plant-name {
 	font-size: 5em;
@@ -21,7 +23,7 @@ img {
 	/* padding-bottom: 0; */
 }
 h2 {
-	font-size: 3em;
+	font-size: 2em;
 	margin-bottom: 0;
 }
 p {
@@ -95,4 +97,45 @@ button:hover {
 .plant-image-container {
 	position: relative;
 	margin: 2em;
+}
+
+@media (min-width: 600px) {
+	img {
+		width: 600px;
+		margin: 5em;
+		margin-left: 1em;
+
+	}
+	.anti-heart,
+	.heart {
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		z-index: 2;
+		top: 82%;
+		right: 15%;
+		cursor: pointer;
+	}
+	.plant-card {
+		display: flex;
+		flex-direction: row;
+		/* flex-wrap: wrap; */
+		justify-content: center;
+
+		background-color: var(--transparent-grey);
+	}
+	.ul-plant {
+		font-size: 20px;
+	}
+	.plant-name {
+		font-size: 4em;
+		padding-left: 1.3em;
+		margin-bottom: 0;
+		/* padding-bottom: 0; */
+	}
+	.plant-full-container {
+		border: 4px solid rgb(204, 189, 189);
+		background-color: var(--transparent-grey);
+		margin: 5em;
+	}
 }
