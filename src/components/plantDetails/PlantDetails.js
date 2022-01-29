@@ -25,7 +25,7 @@ const PlantDetails = () => {
 
 	useEffect(() => {
 		getPlant();
-	}, [plant]);
+	}, []);
 
 	const handleFavorite = async () => {
 		await axios.put(url, { favorite: true });
