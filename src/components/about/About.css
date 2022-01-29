@@ -1,9 +1,9 @@
 .About__text {
     display: flex;
-    text-align: center;
+    /* text-align: center; */
     background-color: var(--transparent-grey);
     padding: 20px;
-    flex-direction: column;
+    /* flex-direction: column; */
     margin-top: 50px;
     margin-left: 200px;
     margin-right: 200px;
