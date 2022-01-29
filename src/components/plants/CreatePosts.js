@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import axios from 'axios';
@@ -69,7 +68,7 @@ function CreatePosts(props) {
 		<div className='create'>
 			<div className='sub-heading'>
 				<p className='add-paragraph'>Don't see what you're For?</p>
-					<AddCircleIcon className='modalBtn' onClick={handleOpen} />
+				<AddCircleIcon className='modalBtn' onClick={handleOpen} />
 			</div>
 
 			<Modal open={modal} onClose={handleClose} className='modal-bg'>
@@ -130,6 +129,39 @@ function CreatePosts(props) {
 						</div>
 						<div className='column-2'>
 							<form action=''>
+								<h4 className='choices'> Difficulty:</h4>
+								<label htmlFor='difficulty'>Beginner</label>
+								<input
+									type='radio'
+									id='difficulty'
+									name='difficulty'
+									value='beginner'
+									checked={plant.difficulty === 'beginner'}
+									onChange={handleChange}
+									className='modal__radio-name'
+								/>
+								<label htmlFor='difficulty'>Moderate</label>
+								<input
+									type='radio'
+									id='difficulty'
+									name='difficulty'
+									value='moderate'
+									checked={plant.difficulty === 'moderate'}
+									onChange={handleChange}
+									className='modal__radio-name'
+								/>
+								<label htmlFor='difficulty'>Advanced</label>
+								<input
+									type='radio'
+									id='difficulty'
+									name='difficulty'
+									value='advanced'
+									checked={plant.difficulty === 'advanced'}
+									onChange={handleChange}
+									className='modal__radio-name'
+								/>
+							</form>
+							<form action=''>
 								<h4 className='choices'> Light:</h4>
 								<label htmlFor='light'>High</label>
 								<input
@@ -176,11 +208,9 @@ function CreatePosts(props) {
 								/>
 							</form>
 						</div>
-						<input
-							type='submit'
-							onClick={handleSubmit}
-							className='submit-btn'
-						/>
+						<button onClick={handleSubmit} className='submit-btn'>
+							Submit
+						</button>
 					</Typography>
 				</Box>
 			</Modal>

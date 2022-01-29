@@ -44,8 +44,8 @@
     margin: auto;
     margin-top: 10px;
 } */
-.submit-btn {
-    width: 100px;
+.submit-btn  button {
+    width: 20px;
     height: 20px;
     background-color: var(--orange);
     color: whitesmoke;
@@ -58,13 +58,10 @@
 	background-color: var(--orange);
 	border-radius: 100px;
 	box-shadow: var(--orange) 0 -25px 18px -14px inset, var(--orange) 0 1px 2px,
-		var(--orange) 0 2px 4px, var(--green) 0 4px 8px, var(--orange) 0 8px 16px,
+		var(--orange) 0 2px 4px, var(--green) 4px 4px 4px, var(--orange) 0 8px 16px,
 		var(--orange) 0 16px 32px;
 	color: var(--maroon);
 	cursor: pointer;
-	display: inline-block;
-	font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-	padding: 16px 28px;
 	transition: all 250ms;
 	border: 0;
 	font-size: 16px;
@@ -72,12 +69,12 @@
 	-webkit-user-select: none;
 	touch-action: manipulation;
 }
-.submit-btn:hover {
+button .submit-btn:hover {
 	box-shadow: var(--green) 0 -25px 18px -14px inset, var(--green) 0 1px 2px,
 		var(--green) 0 2px 4px, var(--green
 		) 0 4px 8px,
 		var(--green) 0 8px 16px, var(--green) 0 16px 32px;
-	transform: scale(1.05) rotate(-1deg);
+
 }
 
 .cancel-btn {
