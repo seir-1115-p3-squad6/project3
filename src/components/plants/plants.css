@@ -1,16 +1,25 @@
 .card-container {
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: 5rem;
 }
 
 .card-image {
-	height: 200px;
-	border: none;
+	float: left;
+	width: 75%;
+	height: 75%;
+	background-size: cover;
+	border: 0;
+}
+
+.card-img-contain {
+	height: 11rem;
+	overflow: hidden;
 }
 
 .card {
 	background-color: var(--transparent-grey);
-	justify-content: center;
+
 	padding: 0;
 	margin: 2rem;
 }
@@ -18,4 +27,29 @@
 .card-name {
 	font-weight: 200;
 	font-size: 2rem;
+	display: block;
+}
+
+.anti-heart {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+/* .heart {
+	position: absolute;
+    z-index: 2;
+    bottom: 16px;
+    right: 16px;
+    cursor: pointer;
+} */
+
+.non-heart {
+	/* border: 1rem solid red; */
+	color: grey;
+}
+
+.red-heart {
+	/* border: 1rem solid blue; */
+	color: red;
 }
