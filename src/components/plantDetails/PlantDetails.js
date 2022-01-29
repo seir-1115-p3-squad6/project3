@@ -9,7 +9,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 const PlantDetails = () => {
 	const { id } = useParams();
 
-	const [plant, setPlant] = useState(null);
+	const [plant, setPlant] = useState('');
 
 	const url = `http://localhost:3000/plants/${id}`;
 
