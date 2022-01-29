@@ -90,9 +90,12 @@ const PlantDetails = () => {
 					<h1>{plant.name}</h1>
 					<h2> Scientific Name: {plant.scientific_name}</h2>
 					<p>Descrition: {plant.description}</p>
-					<ul>
-						<li>Moisture: requires {plant.moisture} moisture</li>
-						<li>Light: requires {plant.light} light</li>
+					<ul className='ul-plant'>
+						<li>
+							{' '}
+							<strong>Moisture:</strong> requires {plant.moisture} moisture
+						</li>
+						<li> <strong>Light:</strong> requires {plant.light} light</li>
 					</ul>
 					<button>
 						<a className='plant-purchase' href={plant.purchase_link}>

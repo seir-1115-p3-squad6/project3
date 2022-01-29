@@ -96,3 +96,33 @@ button:hover {
 	position: relative;
 	margin: 2em;
 }
+
+@media (min-width: 600px) {
+	img {
+		width: 800px;
+		margin: 5em;
+		
+	}
+	.anti-heart,
+	.heart {
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		z-index: 2;
+		top: 1010px;
+		left: 900px;
+		cursor: pointer;
+	}
+	.plant-card {
+		border: 4px solid rgb(204, 189, 189);
+		display: flex;
+		flex-direction: row;
+		/* flex-wrap: wrap; */
+		justify-content: center;
+		margin: 5em;
+		background-color: var(--transparent-grey);
+	}
+	.ul-plant {
+		font-size: 20px;
+	}
+}
