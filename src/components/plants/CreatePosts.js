@@ -14,17 +14,18 @@ function CreatePosts(props) {
 	const handleOpen = () => setModal(true);
 	const handleClose = () => setModal(false);
 
+
 	const style = {
 		position: 'absolute',
 		top: '50%',
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
-		bgcolor: 'background.paper',
+		bgcolor: 'rgb(169, 177, 167, 1)',
 		border: '2px solid #000',
 		boxShadow: '0px 5px 5px',
 		p: 2,
 		margin: 'auto',
-		maxWidth:'100%',
+		maxWidth: '100%',
 		maxHeight: '100%',
 	};
 
@@ -45,15 +46,12 @@ function CreatePosts(props) {
 		console.log(event.target.value);
 	};
 
-	
-
-
 	const redirectToPlants = () => {
 		window.location.pathname = '/plants';
 	};
 
-	const createNewPlant = () => {
-		axios
+	const createNewPlant = async() => {
+		await axios
 			.post('http://localhost:3000/plants', plant)
 			.then((res) => console.log(res.data))
 			.catch((error) => console.log(error));
@@ -69,10 +67,10 @@ function CreatePosts(props) {
 	return (
 		<div className='create'>
 			<Button onClick={handleOpen}>
-				<AddCircleIcon />
+				<AddCircleIcon className='modalBtn' />
 			</Button>
 			<Modal open={modal} onClose={handleClose} className='modal-bg'>
-				<Box sx={{...style, width: 350}} onSubmit={handleSubmit}>
+				<Box sx={{ ...style, width: 350 }} onSubmit={handleSubmit}>
 					<CancelIcon onClick={handleClose} className='cancel-btn' />
 					<Typography
 						id='modal-modal-title'
@@ -102,7 +100,7 @@ function CreatePosts(props) {
 								value={plant.scientific_name}
 								className='modal__scientific-name'
 							/>
-							<label htmlFor='image'>Image URl:</label>
+							<label htmlFor='image'>Image URL:</label>
 							<input
 								type='text'
 								onChange={handleChange}
