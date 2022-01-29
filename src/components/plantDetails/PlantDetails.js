@@ -55,8 +55,8 @@ const PlantDetails = () => {
 					<div className='plant-image-container'>
 						<img src={plant.image} alt={plant.name} />
 						<FavoriteIcon
-							width='30'
-							height='30'
+							width='60'
+							height='60'
 							onClick={handleFavorite}
 							className='anti-heart'
 						/>
