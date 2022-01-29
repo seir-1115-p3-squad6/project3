@@ -67,7 +67,7 @@ function CreatePosts(props) {
 	return (
 		<div className='create'>
 			<div className='sub-heading'>
-				<p className='add-paragraph'>Don't see what you're For?</p>
+				<p className='add-paragraph'>Don't see what you're looking for?</p>
 				<AddCircleIcon className='modalBtn' onClick={handleOpen} />
 			</div>
 

@@ -69,6 +69,7 @@
 	-webkit-user-select: none;
 	touch-action: manipulation;
 }
+
 button .submit-btn:hover {
 	box-shadow: var(--green) 0 -25px 18px -14px inset, var(--green) 0 1px 2px,
 		var(--green) 0 2px 4px, var(--green
@@ -97,6 +98,7 @@ input[type=text]:focus {
     color: var(--orange);
     display: flex;
     justify-content: space-between;
+    margin-right: 5px;
 }
 
 .modal__radio-name {
@@ -106,10 +108,11 @@ input[type=text]:focus {
 .sub-heading {
     display: flex;
     justify-content: flex-end;
-    background-color: var(--transparent-orange);
-
+    background-color: var(--green);
+    color:  var(--orange);
 }
 
 .add-paragraph {
     font-size: 20px;
+    margin-right: 5px;
 }
