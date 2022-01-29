@@ -53,7 +53,7 @@ const PlantDetails = () => {
 				<h1 className='plant-name'>{plant.name}</h1>
 				<div className='plant-card'>
 					<div className='plant-image-container'>
-						<img src={plant.image} alt={plant.name} />
+						<img className='plant-img' src={plant.image} alt={plant.name} />
 						<FavoriteIcon
 							width='60'
 							height='60'
@@ -62,8 +62,11 @@ const PlantDetails = () => {
 						/>
 					</div>
 					<div className='plant-info-div'>
-						<h2> Scientific Name: {plant.scientific_name}</h2>
-						<h4 className='plant-description'>Descrition:</h4>
+						<h2 className='sci-name'>
+							{' '}
+							Scientific Name: {plant.scientific_name}
+						</h2>
+						<h4 className='description'>Description:</h4>
 						<p className='plant-description'> {plant.description}</p>
 						<ul className='ul-plant'>
 							<li>
@@ -77,7 +80,7 @@ const PlantDetails = () => {
 							</li>
 						</ul>
 						<div className='buttons'>
-							<button>
+							<button className='button'>
 								<a
 									className='plant-purchase'
 									href={plant.purchase_link}
@@ -86,7 +89,9 @@ const PlantDetails = () => {
 									Purchase Plant here
 								</a>
 							</button>
-							<button onClick={handleDelete}>Kill This Plant</button>
+							<button className='button' onClick={handleDelete}>
+								Kill This Plant
+							</button>
 						</div>
 					</div>
 				</div>
@@ -98,7 +103,7 @@ const PlantDetails = () => {
 				<h1 className='plant-name'>{plant.name}</h1>
 				<div className='plant-card'>
 					<div className='plant-image-container'>
-						<img src={plant.image} alt={plant.name} />
+						<img className='plant-img' src={plant.image} alt={plant.name} />
 						<FavoriteIcon
 							onClick={handleUnfavorite}
 							className='heart'
@@ -107,8 +112,10 @@ const PlantDetails = () => {
 						/>
 					</div>
 					<div className='plant-info-div'>
-						<h2>Scientific Name: {plant.scientific_name}</h2>
-						<h4 className='plant-description'>Descrition:</h4>
+						<h2 className='sci-name'>
+							Scientific Name: {plant.scientific_name}
+						</h2>
+						<h4 className='description'>Description:</h4>
 						<p className='plant-description'>{plant.description}</p>
 						<ul className='ul-plant'>
 							<li>
@@ -124,7 +131,7 @@ const PlantDetails = () => {
 							</li>
 						</ul>
 						<div className='buttons'>
-							<button>
+							<button className='button'>
 								<a
 									className='plant-purchase'
 									href={plant.purchase_link}
@@ -133,7 +140,9 @@ const PlantDetails = () => {
 									Purchase Plant here
 								</a>
 							</button>
-							<button onClick={handleDelete}>Kill This Plant</button>
+							<button className='button' onClick={handleDelete}>
+								Kill This Plant
+							</button>
 						</div>
 					</div>
 				</div>
