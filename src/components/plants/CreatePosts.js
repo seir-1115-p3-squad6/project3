@@ -43,7 +43,8 @@ function CreatePosts(props) {
 	const handleChange = (event) => {
 		event.preventDefault();
 		setPlant({ ...plant, [event.target.id]: event.target.value });
-		console.log(event.target.value);
+		
+		
 	};
 
 	const redirectToPlants = () => {
