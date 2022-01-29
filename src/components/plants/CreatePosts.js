@@ -76,14 +76,14 @@ function CreatePosts(props) {
 					<CancelIcon onClick={handleClose} className='cancel-btn' />
 					<Typography
 						id='modal-modal-title'
-						variant='h6'
-						component='h2'
+						component='div'
 						className='form-title'>
 						Add a plant
 					</Typography>
 					<Typography
 						id='modal-modal-description'
 						sx={{ mt: 2 }}
+						component='div'
 						className='form'>
 						<div className='column-1'>
 							<label htmlFor='name'>Plant Name:</label>
