@@ -1,0 +1,19 @@
+.About__text {
+    display: flex;
+    text-align: center;
+    background-color: var(--transparent-grey);
+    padding: 20px;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-size: 12px;
+}
+
+p::first-letter {
+    font-size: 400%;
+    color: rgb(73, 102, 59);
+    float:left;
+    margin: 0 .1em 0 0;
+    line-height: 0.85;
+}
