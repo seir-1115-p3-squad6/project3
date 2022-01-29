@@ -10,10 +10,19 @@
     font-size: 12px;
 }
 
-p::first-letter {
+.about-paragraph::first-letter {
     font-size: 400%;
     color: rgb(73, 102, 59);
     float:left;
     margin: 0 .1em 0 0;
     line-height: 0.85;
 }
+
+@media only screen and (max-width: 600px) {
+	p {
+		text-align: center;
+        display: flex;
+		flex-direction: column;
+        font-size: calc(1rem + 1vw);
+	}
+  }
