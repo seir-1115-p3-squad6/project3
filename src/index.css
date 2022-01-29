@@ -1,16 +1,23 @@
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Source Serif 4', sans-serif;
+	background-image: url('../public/assets/plant-bg.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-image: center;
+	color: var(--maroon);
+	/* -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; */
 }
 
-code {
+/* code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
-}
+} */
 
 .heart {
 	color: red;
@@ -18,4 +25,15 @@ code {
 
 .anti-heart {
 	color: grey;
+}
+
+:root {
+	--maroon: rgb(104, 40, 15);
+	--grey: rgb(169, 177, 167);
+	--green: rgb(73, 102, 59);
+	--orange: rgb(217, 119, 59);
+	--transparent-orange: rgb(217, 119, 59, 0.5);
+	--transparent-grey: rgb(169, 177, 167, 0.7);
+	--transparent-green: rgb(73, 102, 59, 0.5);
+	--transparent-maroon: rgb(104, 40, 15, 0.5);
 }
