@@ -6,30 +6,30 @@
 
 
 .modal-bg {
-    background-image: url('../../../public/assets/meritt-thomas-sbkdilomylc-unsplash.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
 .form-title {
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid var(--grey);
-
+    border-bottom: 1px solid var(--maroon);
+    width: 200px;
 }
 
 .form {
     display: grid;
 }
+
+.column-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
 .choices {
     font-size: 15px;
     color: darkslategrey;
+    padding-top: 5px;
 }
 
 .submit-btn {
@@ -42,7 +42,7 @@
     font-size: 20px;
     text-align: center;
     margin: auto;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .cancel-btn {
@@ -52,6 +52,19 @@
     width: 70px;
 }
 
+input[type=text] {
+    border-radius: 5px;
+    border: none;
+}
+
 input[type=text]:focus {
     outline: none;
+}
+
+.modalBtn {
+    color: var(--orange);
+}
+
+.modal__radio-name {
+    margin-right: 10px;
 }
