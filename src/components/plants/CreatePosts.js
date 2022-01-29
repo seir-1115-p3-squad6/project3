@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import axios from 'axios';
@@ -14,17 +13,18 @@ function CreatePosts(props) {
 	const handleOpen = () => setModal(true);
 	const handleClose = () => setModal(false);
 
+
 	const style = {
 		position: 'absolute',
 		top: '50%',
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
-		bgcolor: 'background.paper',
+		bgcolor: 'rgb(169, 177, 167, 1)',
 		border: '2px solid #000',
 		boxShadow: '0px 5px 5px',
 		p: 2,
 		margin: 'auto',
-		maxWidth:'100%',
+		maxWidth: '100%',
 		maxHeight: '100%',
 	};
 
@@ -35,6 +35,7 @@ function CreatePosts(props) {
 		image: '',
 		description: '',
 		purchase_link: '',
+		difficulty:'',
 		light: '',
 		moisture: '',
 	});
@@ -42,18 +43,16 @@ function CreatePosts(props) {
 	const handleChange = (event) => {
 		event.preventDefault();
 		setPlant({ ...plant, [event.target.id]: event.target.value });
-		console.log(event.target.value);
+		
+		
 	};
-
-	
-
 
 	const redirectToPlants = () => {
 		window.location.pathname = '/plants';
 	};
 
-	const createNewPlant = () => {
-		axios
+	const createNewPlant = async() => {
+		await axios
 			.post('http://localhost:3000/plants', plant)
 			.then((res) => console.log(res.data))
 			.catch((error) => console.log(error));
@@ -68,22 +67,24 @@ function CreatePosts(props) {
 
 	return (
 		<div className='create'>
-			<Button onClick={handleOpen}>
-				<AddCircleIcon />
-			</Button>
+			<div className='sub-heading'>
+				<p className='add-paragraph'>Don't see what you're looking for?</p>
+				<AddCircleIcon className='modalBtn' onClick={handleOpen} />
+			</div>
+
 			<Modal open={modal} onClose={handleClose} className='modal-bg'>
-				<Box sx={{...style, width: 350}} onSubmit={handleSubmit}>
+				<Box sx={{ ...style, width: 350 }} onSubmit={handleSubmit}>
 					<CancelIcon onClick={handleClose} className='cancel-btn' />
 					<Typography
 						id='modal-modal-title'
-						variant='h6'
-						component='h2'
+						component='div'
 						className='form-title'>
-						Create an Angel
+						Add a plant
 					</Typography>
 					<Typography
 						id='modal-modal-description'
 						sx={{ mt: 2 }}
+						component='div'
 						className='form'>
 						<div className='column-1'>
 							<label htmlFor='name'>Plant Name:</label>
@@ -102,7 +103,7 @@ function CreatePosts(props) {
 								value={plant.scientific_name}
 								className='modal__scientific-name'
 							/>
-							<label htmlFor='image'>Image URl:</label>
+							<label htmlFor='image'>Image URL:</label>
 							<input
 								type='text'
 								onChange={handleChange}
@@ -128,6 +129,39 @@ function CreatePosts(props) {
 							/>
 						</div>
 						<div className='column-2'>
+							<form action=''>
+								<h4 className='choices'> Difficulty:</h4>
+								<label htmlFor='difficulty'>Beginner</label>
+								<input
+									type='radio'
+									id='difficulty'
+									name='difficulty'
+									value='beginner'
+									checked={plant.difficulty === 'beginner'}
+									onChange={handleChange}
+									className='modal__radio-name'
+								/>
+								<label htmlFor='difficulty'>Moderate</label>
+								<input
+									type='radio'
+									id='difficulty'
+									name='difficulty'
+									value='moderate'
+									checked={plant.difficulty === 'moderate'}
+									onChange={handleChange}
+									className='modal__radio-name'
+								/>
+								<label htmlFor='difficulty'>Advanced</label>
+								<input
+									type='radio'
+									id='difficulty'
+									name='difficulty'
+									value='advanced'
+									checked={plant.difficulty === 'advanced'}
+									onChange={handleChange}
+									className='modal__radio-name'
+								/>
+							</form>
 							<form action=''>
 								<h4 className='choices'> Light:</h4>
 								<label htmlFor='light'>High</label>
@@ -175,11 +209,9 @@ function CreatePosts(props) {
 								/>
 							</form>
 						</div>
-						<input
-							type='submit'
-							onClick={handleSubmit}
-							className='submit-btn'
-						/>
+						<button onClick={handleSubmit} className='submit-btn'>
+							Submit
+						</button>
 					</Typography>
 				</Box>
 			</Modal>

@@ -1,0 +1,36 @@
+.About__text {
+    display: flex;
+    /* text-align: center; */
+    background-color: var(--transparent-grey);
+    padding: 20px;
+    /* flex-direction: column; */
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-size: 16px;
+}
+
+.about-paragraph::first-letter {
+    font-size: 400%;
+    color: rgb(73, 102, 59);
+    float:left;
+    margin: 0 .1em 0 0;
+    line-height: 0.85;
+}
+
+@media only screen and (max-width: 200px) {
+	.About__text, .about-paragraph {
+        display: flex;
+		flex-direction: column;
+        flex-wrap: wrap;
+        font-size: calc(1rem + 1vw);
+        justify-content: center;
+	}
+    .about-paragraph::first-letter {
+        font-size: 400%;
+        color: rgb(73, 102, 59);
+        float:left;
+        margin: 0 .1em 0 0;
+        line-height: 0.85; 
+    }
+  }

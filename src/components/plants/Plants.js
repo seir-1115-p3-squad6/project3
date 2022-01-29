@@ -7,7 +7,7 @@ import './plants.css';
 function Plants(props) {
 	const [plants, setPlants] = useState([]);
 
-	const url = 'http://localhost:3000/plants';
+	const url = 'https://seir1115-plants-api.herokuapp.com/plants';
 
 	useEffect(() => {
 		fetch(url)
@@ -25,38 +25,32 @@ function Plants(props) {
 					!plant.favorite ? (
 						<div className='card' key={plant._id}>
 							<Link to={`${plant._id}`}>
-								{/* <div className='card'> */}
-								{/* <div className='card-image'> */}
-								<img
-									src={plant.image}
-									alt={plant.name}
-									className='card-image'
-								/>
-								{/* </div>
-								<div className='card-title'> */}
+								<div className='card-img-contain'>
+									<img
+										src={plant.image}
+										alt={plant.name}
+										className='card-image'
+									/>
+								</div>
+
 								<h3 className='card-name'>{plant.name}</h3>
-								{/* </div> */}
-								{/* </div> */}
 							</Link>
-							<FavoriteIcon className='anti-heart'></FavoriteIcon>
+							<FavoriteIcon className='non-heart'></FavoriteIcon>
 						</div>
 					) : (
 						<div key={plant._id} className='card'>
 							<Link to={`${plant._id}`}>
-								{/* <div className='card'> */}
-								{/* <div className='card-image'> */}
-								<img
-									src={plant.image}
-									alt={plant.name}
-									className='card-image'
-								/>
-								{/* </div> */}
-								{/* <div className='card-title'> */}
+								<div className='card-img-contain'>
+									<img
+										src={plant.image}
+										alt={plant.name}
+										className='card-image'
+									/>
+								</div>
+
 								<h3 className='card-name'>{plant.name}</h3>
-								{/* </div> */}
-								{/* </div> */}
 							</Link>
-							<FavoriteIcon className='heart'></FavoriteIcon>
+							<FavoriteIcon className='red-heart'></FavoriteIcon>
 						</div>
 					)
 				)}

@@ -19,13 +19,7 @@ body {
 		monospace;
 } */
 
-.heart {
-	color: red;
-}
 
-.anti-heart {
-	color: grey;
-}
 
 :root {
 	--maroon: rgb(104, 40, 15);

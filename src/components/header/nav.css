@@ -1,5 +1,5 @@
 nav {
-	background-color: var(--transparent-grey);
+	background-color: var(--grey);
 }
 
 nav ul {
@@ -11,6 +11,7 @@ nav ul {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	padding-left: 0rem;
+	font-size: 2em;
 }
 
 nav li {
@@ -30,9 +31,10 @@ a {
 	}
 	nav ul {
 		display: flex;
+		flex-wrap: wrap;
 		flex-direction: column;
 	}
 	nav li {
 		margin: 0.8em 0;
 	}
-  }
+}
