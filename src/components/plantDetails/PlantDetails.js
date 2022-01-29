@@ -66,8 +66,12 @@ const PlantDetails = () => {
 						<h4>Descrition:</h4>
 						<p> {plant.description}</p>
 						<ul>
-							<li>Moisture: requires {plant.moisture} moisture</li>
-							<li>Light: requires {plant.light} light</li>
+							<li>
+								<strong>Moisture:</strong> requires {plant.moisture} moisture
+							</li>
+							<li>
+								<strong>Light:</strong> requires {plant.light} light
+							</li>
 						</ul>
 						<div className='buttons'>
 							<button>
@@ -83,33 +87,40 @@ const PlantDetails = () => {
 		);
 	} else {
 		return (
-			<div className='plant-card'>
-				<div>
-					<img src={plant.image} alt={plant.name} />
-					<FavoriteIcon onClick={handleUnfavorite} className='heart' />
-				</div>
-				<div className='plant-info-div'>
-					<h1>{plant.name}</h1>
-					<h2>
-						Scientific Name:{plant.scientific_name}
-					</h2>
-					<p>Descrition: {plant.description}</p>
-					<ul className='ul-plant'>
-						<li>
-							{' '}
-							<strong>Moisture:</strong> requires {plant.moisture} moisture
-						</li>
-						<li>
-							{' '}
-							<strong>Light:</strong> requires {plant.light} light
-						</li>
-					</ul>
-					<button>
-						<a className='plant-purchase' href={plant.purchase_link}>
-							Purchace Plant here
-						</a>
-					</button>
-					<button onClick={handleDelete}>Kill This Plant</button>
+			<div className='plant-full-container'>
+				<h1>{plant.name}</h1>
+				<div className='plant-card'>
+					<div className='plant-image-container'>
+						<img src={plant.image} alt={plant.name} />
+						<FavoriteIcon
+							onClick={handleUnfavorite}
+							className='heart'
+							width='60'
+							height='60'
+						/>
+					</div>
+					<div className='plant-info-div'>
+						<h2>Scientific Name:{plant.scientific_name}</h2>
+						<p>Descrition: {plant.description}</p>
+						<ul className='ul-plant'>
+							<li>
+								{' '}
+								<strong>Moisture:</strong> requires {plant.moisture} moisture
+							</li>
+							<li>
+								{' '}
+								<strong>Light:</strong> requires {plant.light} light
+							</li>
+						</ul>
+						<div className='buttons'>
+							<button>
+								<a className='plant-purchase' href={plant.purchase_link}>
+									Purchace Plant here
+								</a>
+							</button>
+							<button onClick={handleDelete}>Kill This Plant</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		);
