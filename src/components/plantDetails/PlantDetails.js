@@ -18,8 +18,8 @@ const PlantDetails = () => {
 	function getPlant() {
 		fetch(url)
 			.then((res) => res.json())
-			.then((json) => {
-				setPlant(json);
+			.then((res) => {
+				setPlant(res);
 			});
 	}
 
