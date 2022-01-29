@@ -1,19 +1,24 @@
 .card-container {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	margin-bottom: 5rem;
 }
 
 .card-image {
 	float: left;
-	width: 75%;
-	height: 75%;
+	width: 35%;
+	height: 40%;
+	margin: 0;
+	position: absolute;
 	background-size: cover;
 	border: 0;
 }
 
 .card-img-contain {
-	height: 11rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 18rem;
 	overflow: hidden;
 }
 
@@ -56,10 +61,17 @@
 
 @media (min-width: 600px) {
 	.card-img-contain {
-		height: 15rem;
+		height: 18rem;
 	}
 	.card-image {
-		width: 50%;
-		height: 50%;
+		width: 20%;
+		height: 40%;
+		margin: 0;
 	}
+	
+	.card-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin-bottom: 5rem;
+}
 }
