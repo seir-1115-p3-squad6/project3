@@ -7,7 +7,7 @@ import './plants.css';
 function Plants(props) {
 	const [plants, setPlants] = useState([]);
 
-	const url = 'http://localhost:3000/plants';
+	const url = 'https://seir1115-plants-api.herokuapp.com/plants';
 
 	useEffect(() => {
 		fetch(url)
