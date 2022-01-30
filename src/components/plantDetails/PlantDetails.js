@@ -15,8 +15,8 @@ const PlantDetails = () => {
 
 	const navigate = useNavigate();
 
-	function getPlant() {
-		fetch(url)
+	async function getPlant() {
+		await fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
 				setPlant(res);
@@ -29,12 +29,14 @@ const PlantDetails = () => {
 
 	const handleFavorite = async () => {
 		await axios.put(url, { favorite: true });
-		navigate(`/plants`, { replace: true });
+		getPlant();
+		// Tyler helped us figure out this issue during officehours (issue ticker: #27)
 	};
 
 	const handleUnfavorite = async () => {
 		await axios.put(url, { favorite: false });
-		navigate(`/plants`, { replace: true });
+		getPlant();
+		
 	};
 
 	// referred to iceCream api for reference

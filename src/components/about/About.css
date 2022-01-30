@@ -16,6 +16,7 @@
 	float: left;
 	margin: 0 0.1em 0 0;
 	line-height: 0.85;
+	/* This drop cap code used  https://www.w3docs.com/snippets/css/how-to-create-drop-caps-for-the-text.html as a reference*/
 }
 
 @media (max-width: 600px) {
