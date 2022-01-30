@@ -44,8 +44,8 @@
     margin: auto;
     margin-top: 10px;
 } */
-.submit-btn  button {
-    width: 20px;
+.submit-btn {
+    width: 100px;
     height: 20px;
     background-color: var(--orange);
     color: whitesmoke;
@@ -70,7 +70,7 @@
 	touch-action: manipulation;
 }
 
-button .submit-btn:hover {
+.submit-btn:hover {
 	box-shadow: var(--green) 0 -25px 18px -14px inset, var(--green) 0 1px 2px,
 		var(--green) 0 2px 4px, var(--green
 		) 0 4px 8px,
