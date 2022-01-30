@@ -13,7 +13,6 @@ function CreatePosts(props) {
 	const handleOpen = () => setModal(true);
 	const handleClose = () => setModal(false);
 
-
 	const style = {
 		position: 'absolute',
 		top: '50%',
@@ -35,7 +34,7 @@ function CreatePosts(props) {
 		image: '',
 		description: '',
 		purchase_link: '',
-		difficulty:'',
+		difficulty: '',
 		light: '',
 		moisture: '',
 	});
@@ -43,17 +42,15 @@ function CreatePosts(props) {
 	const handleChange = (event) => {
 		event.preventDefault();
 		setPlant({ ...plant, [event.target.id]: event.target.value });
-		
-		
 	};
 
 	const redirectToPlants = () => {
 		window.location.pathname = '/plants';
 	};
 
-	const createNewPlant = async() => {
+	const createNewPlant = async () => {
 		await axios
-			.post('http://localhost:3000/plants', plant)
+			.post('https://seir1115-plants-api.herokuapp.com/plants', plant)
 			.then((res) => console.log(res.data))
 			.catch((error) => console.log(error));
 		handleClose();
