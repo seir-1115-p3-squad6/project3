@@ -5,13 +5,16 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import axios from 'axios';
-// import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 /*  imported mui modal refernce: https://mui.com/components/modal/#main-content -> discussed with Zoe on 1/27 and was approved */
 import './CreatePosts.styles.css';
 
 function CreatePosts(props) {
 	const handleOpen = () => setModal(true);
 	const handleClose = () => setModal(false);
+
+	const navigate = useNavigate();
 
 	const style = {
 		position: 'absolute',
@@ -44,22 +47,16 @@ function CreatePosts(props) {
 		setPlant({ ...plant, [event.target.id]: event.target.value });
 	};
 
-	const redirectToPlants = () => {
-		window.location.pathname = '/plants';
-	};
-
 	const createNewPlant = async () => {
-		await axios
-			.post('https://seir1115-plants-api.herokuapp.com/plants', plant)
-			.then((res) => console.log(res.data))
-			.catch((error) => console.log(error));
-		handleClose();
+		await axios.post('https://seir1115-plants-api.herokuapp.com/plants', plant);
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		createNewPlant();
-		redirectToPlants();
+
+		navigate(`/`, { replace: true });
+		handleClose();
 	};
 
 	return (
