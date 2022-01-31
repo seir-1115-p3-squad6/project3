@@ -8,5 +8,5 @@
 
         - PlantDetails - component for an individual plant result.
 
-The rest of our planning can be found on our project planning page here: https://github.com/orgs/seir-1115-p3-squad6/projects/1
+The rest of our planning can be found on our project planning page here at: https://github.com/orgs/seir-1115-p3-squad6/projects/1
     
