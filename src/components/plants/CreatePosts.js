@@ -5,12 +5,13 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import axios from 'axios';
+import FilterSearch from './FilterSearch';
 import { useNavigate } from 'react-router-dom';
 
 /*  imported mui modal refernce: https://mui.com/components/modal/#main-content -> discussed with Zoe on 1/27 and was approved */
 import './CreatePosts.styles.css';
 
-function CreatePosts(props) {
+function CreatePosts({handleSearch, plants}) {
 	const handleOpen = () => setModal(true);
 	const handleClose = () => setModal(false);
 
@@ -62,8 +63,11 @@ function CreatePosts(props) {
 	return (
 		<div className='create'>
 			<div className='sub-heading'>
-				<p className='add-paragraph'>Don't see what you're looking for?</p>
-				<AddCircleIcon className='modalBtn' onClick={handleOpen} />
+				<FilterSearch plants={plants} handleSearch={handleSearch} className='filterSearchBar'/>
+				<div className='createPostBtn'>
+					<p className='add-paragraph'>Don't see what you're looking for?</p>
+					<AddCircleIcon className='modalBtn' onClick={handleOpen} />
+				</div>
 			</div>
 
 			<Modal open={modal} onClose={handleClose} className='modal-bg'>
